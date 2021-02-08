@@ -13,8 +13,7 @@ class Main(object):
             i += 1
         return i
 
-    def find_previous_title_level(self):
-        cur_row, cur_col = self.vim.current.window.cursor
+    def find_previous_title_level(self, cur_row):
         for row in range(cur_row - 2, -1, -1):
             level = self.title_level(self.vim.current.buffer[row])
             if level > 0:
@@ -37,12 +36,17 @@ class Main(object):
         self.buffer[row-1] = new_line
 
     @neovim.function('UpdateCurrentTitleLevel')
-    def doItPython(self, args):
+    def do_update_current_title_level(self, args):
         if len(self.current_line) == 1 and self.current_line.endswith('#'):
-            level = self.find_previous_title_level()
+            cur_row, cur_col = self.vim.current.window.cursor
+            level = self.find_previous_title_level(cur_row)
             self.current_line = '#' * level
             self.vim.command(f'echo "level = {level}"')
             self.vim.command('startinsert!')
         else:
             self.vim.feedkeys('a')
 
+    @neovim.function('NeomGetFold')
+    def do_neom_get_fold(self, args):
+        level = self.find_previous_title_level(args[0])
+        return level

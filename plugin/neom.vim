@@ -22,6 +22,9 @@ endfunction
 "
 inoremap # #<esc>:call UpdateCurrentTitleLevel()<CR>
 
+setlocal foldmethod=expr
+setlocal foldexpr=NeomGetFold(v:lnum)
+
 
 " the rest of plugin VimL code goes here
 
