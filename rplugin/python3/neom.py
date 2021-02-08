@@ -11,7 +11,7 @@ class Main(object):
             i += 1
         return i
 
-    @neovim.function('DoItPythonn')
+    @neovim.function('UpdateCurrentTitleLevel')
     def doItPython(self, args):
         row, col = self.vim.current.window.cursor
         buffer = self.vim.current.buffer

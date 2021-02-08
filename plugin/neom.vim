@@ -20,7 +20,7 @@ endfunction
 
 " inoremap # #<esc>:exec DoItPython()
 "
-inoremap # #<esc>:call DoItPythonn()<CR>
+inoremap # #<esc>:call UpdateCurrentTitleLevel()<CR>
 
 
 " the rest of plugin VimL code goes here
