@@ -20,6 +20,9 @@ class Main(object):
                 return level
         return 1
 
+    def echo(self, msg):
+        self.vim.command(f'echo "{msg}"')
+
     @property 
     def buffer(self):
         return self.vim.current.buffer
@@ -48,5 +51,8 @@ class Main(object):
 
     @neovim.function('NeomGetFold')
     def do_neom_get_fold(self, args):
-        level = self.find_previous_title_level(args[0])
-        return level
+        self.echo(args[0])
+        return 4
+        # level = self.find_previous_title_level(args[0])
+        # self.echo(level)
+        # return str(level)
