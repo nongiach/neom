@@ -23,8 +23,9 @@ inoremap # #<esc>:call UpdateCurrentTitleLevel()<CR>
 " setlocal foldmethod=expr
 " setlocal foldexpr=NeomGetFold(v:lnum)
 
-set foldmethod=expr
-set foldexpr=NeomGetFold(v:lnum)
+" set foldmethod=expr
+" let Func = function('NeomGetFold')
+" setlocal foldexpr=Func(v:lnum)
 
 " the rest of plugin VimL code goes here
 
