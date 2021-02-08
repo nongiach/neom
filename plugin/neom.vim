@@ -20,9 +20,14 @@ endfunction
 "
 inoremap # #<esc>:call UpdateCurrentTitleLevel()<CR>
 
-setlocal foldmethod=expr
-setlocal foldexpr=NeomGetFold(v:lnum)
+" setlocal foldmethod=expr
+" setlocal foldexpr=NeomGetFold(v:lnum)
+
+set foldmethod=expr
+set foldexpr=NeomGetFold(v:lnum)
 
 " the rest of plugin VimL code goes here
 
 let g:neom_plugin_loaded = 1
+
+au BufRead,BufNewFile *.md set filetype=neom
