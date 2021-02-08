@@ -46,7 +46,7 @@ class Main(object):
         else:
             self.vim.feedkeys('a')
 
-    @neovim.function('NeomGetFold')
-    def do_neom_get_fold(self, args):
-        level = self.find_previous_title_level(args[0])
-        return level
+    # @neovim.function('NeomGetFold')
+    # def do_neom_get_fold(self, args):
+    #     level = self.find_previous_title_level(args[0])
+    #     return level
