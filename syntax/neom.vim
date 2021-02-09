@@ -11,14 +11,10 @@ endif
 " refer to https://github.com/xolox/vim-notes/issues/2.
 syntax sync fromstart
 
-highlight TODO  ctermfg=Grey guifg=Grey
-
-
 syntax match TODO "TODO"
 syntax match DONE "DONE"
 highlight TODO guifg=#CC8811 gui=bold
 highlight DONE guifg=#88CC11 gui=bold
-
 
 syn match    customHeader1     "^#\{1\}.*"
 syn match    customHeader2     "^#\{2\}.*"
@@ -32,3 +28,5 @@ highlight customHeader4 guifg=#FFAA00 gui=bold
 highlight customHeader3 guifg=#FFC300 gui=bold
 highlight customHeader1 guifg=#FFEA00 gui=bold
 
+syn match HttpLink "\(https\?://\|[cC]:\\\)[^ ]*"
+highlight HttpLink guifg=#88CC11 gui=italic
