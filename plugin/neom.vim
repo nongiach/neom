@@ -77,7 +77,7 @@ function! InitNeom()
   " syn region global_variables start="\(\*\*\*VARS\*\*\*\)\@<=" end="\(\*\*\*OTHERS
         " \*\*\*\)\@=" contains=global_var_match
   " hi link console ErrorMsg
-  highlight console guifg=#EEEEEE gui=bold guibg=#000000
+  highlight console guifg=#CCCCCC guibg=#111111
 endfunction
 " let g:Func = function('NeomGetFold')
 " setlocal foldexpr=g:Func(v:lnum)
