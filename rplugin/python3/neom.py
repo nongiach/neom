@@ -18,7 +18,7 @@ class Main(object):
             level = self.title_level(self.vim.current.buffer[row])
             if level > 0:
                 return level
-        return 1
+        return 0
 
     def echo(self, msg):
         self.vim.command(f'echo "{msg}"')
@@ -49,10 +49,16 @@ class Main(object):
         else:
             self.vim.feedkeys('a')
 
-    @neovim.function('NeomGetFold')
+    @neovim.function('NeomGetFold', sync=True)
     def do_neom_get_fold(self, args):
-        self.echo(args[0])
-        return 4
-        # level = self.find_previous_title_level(args[0])
+        row = args[0]
+        line = self.buffer[row-1]
+        if len(line) == 0:
+            return "-1"
+        # level = self.find_previous_title_level(row)
         # self.echo(level)
-        # return str(level)
+        if '#' in line:
+            level = line.count('#')
+            return f">{level}"
+        else:
+            return '='
