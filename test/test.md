@@ -19,9 +19,8 @@ TODO
 DONE
 https://test.com
 http://test.com
-
-https://test.com
-http://test.com
 c:\\windows
 C:\\windows
+here is : /root/test
+
 

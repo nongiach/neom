@@ -28,5 +28,6 @@ highlight customHeader4 guifg=#FFAA00 gui=bold
 highlight customHeader3 guifg=#FFC300 gui=bold
 highlight customHeader1 guifg=#FFEA00 gui=bold
 
-syn match HttpLink "\(https\?://\|[cC]:\\\)[^ ]*"
+" color http link and filesystem path 
+syn match HttpLink "\(https\?://\|[cC]:\\\|/\)[^ ]*"
 highlight HttpLink guifg=#88CC11 gui=italic
