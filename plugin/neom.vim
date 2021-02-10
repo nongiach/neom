@@ -19,6 +19,7 @@ endfunction
 " inoremap # #<esc>:exec DoItPython()
 "
 inoremap # #<esc>:call UpdateCurrentTitleLevel()<CR>
+nmap gi :call NeomInsertNoteLink()<CR>
 
 " setlocal foldmethod=expr
 " setlocal foldexpr=NNeomGetFold(v:lnum)

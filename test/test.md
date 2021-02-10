@@ -36,8 +36,11 @@ c:\\windows
 C:\\windows
 here is : /root/test
 
+/home/cc/github/notes/2fa_domain_admin.md
+2fa_domain_admin.md
 
 # tata
 tomatoc
 
+:
 

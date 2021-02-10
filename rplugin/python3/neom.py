@@ -1,6 +1,17 @@
 import neovim
+import subprocess
+from subprocess import Popen, PIPE, check_output
 
 # https://github.com/neovim/pynvim
+def sh(cmd, stdin=""):
+    """ run a command, send stdin and capture stdout and exit status"""
+    # process = Popen(cmd.split(), stdin=PIPE, stdout=PIPE)
+    process = Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE)
+    process.stdin.write(bytes(stdin, "utf-8"))
+    stdout = process.communicate()[0].decode('utf-8').strip()
+    process.stdin.close()
+    returncode = process.returncode
+    return returncode, stdout
 
 @neovim.plugin
 class Main(object):
@@ -62,3 +73,12 @@ class Main(object):
             return f">{level}"
         else:
             return '='
+
+    @neovim.function('NeomInsertNoteLink', sync=True)
+    def do_neom_insert_note_link(self, args):
+        # sh("""rofi  -dmenu       -kb-row-down 'alt+k' -kb-row-up 'alt+l' -kb-row-left 'alt+j' -kb-row-right 'alt+m'""", stdin="a\nb\nc\nd")
+        index, note = sh(""". ~/github/notes/notes.sh; basename $(do_ns_rofi_for_vim_plugin ~/github/notes/*.md)""", stdin="a\nb\nc\nd")
+
+        # self.echo(f"called insert note => {note}")
+        self.current_line = self.current_line + note
+        return 0

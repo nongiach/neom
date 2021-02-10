@@ -31,3 +31,6 @@ highlight customHeader1 guifg=#FFEA00 gui=bold
 " color http link and filesystem path 
 syn match HttpLink "\(https\?://\|[cC]:\\\|/\)[^ ]*"
 highlight HttpLink guifg=#88CC11 gui=italic
+
+" highlight Folded guifg=#FF7BB0
+highlight Folded guifg=#FF7B00 gui=italic
