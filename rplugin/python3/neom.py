@@ -54,7 +54,8 @@ class Main(object):
         if len(self.current_line) == 1 and self.current_line.endswith('#'):
             cur_row, cur_col = self.vim.current.window.cursor
             level = self.find_previous_title_level(cur_row)
-            self.current_line = '#' * level
+            if level:
+                self.current_line = '#' * level
             self.vim.command(f'echo "level = {level}"')
             self.vim.command('startinsert!')
         else:
