@@ -29,8 +29,11 @@ highlight customHeader3 guifg=#FFC300 gui=bold
 highlight customHeader1 guifg=#FFEA00 gui=bold
 
 " color http link and filesystem path 
-syn match HttpLink "\(https\?://\|[cC]:\\\|/\)[^ ]*"
-highlight HttpLink guifg=#88CC11 gui=italic
+syn match HttpLinkAndPath "\(https\?://\|[cC]:\\\|/\)[^ ]*"
+syn match NoteLink "[^ ]*.md"
+
+highlight HttpLinkAndPath guifg=#88CC11 gui=italic
+highlight NoteLink guifg=#88CC11 gui=italic
 
 " highlight Folded guifg=#FF7BB0
 highlight Folded guifg=#FF7B00 gui=italic

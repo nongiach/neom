@@ -20,6 +20,9 @@ endfunction
 "
 inoremap # #<esc>:call UpdateCurrentTitleLevel()<CR>
 nmap gi :call NeomInsertNoteLink()<CR>
+" nmap gn :echo expand("vs /home/cc/github/notes/<cWORD>")<CR>
+nnoremap gn :execute 'vs /home/cc/github/notes/' . expand("<cWORD>")<CR>
+" nnoremap gn execute "e tata"
 
 " setlocal foldmethod=expr
 " setlocal foldexpr=NNeomGetFold(v:lnum)
