@@ -69,7 +69,7 @@ class Main(object):
             return "-1"
         # level = self.find_previous_title_level(row)
         # self.echo(level)
-        if '#' in line:
+        if line.startswith('#'):
             level = line.count('#')
             return f">{level}"
         else:
