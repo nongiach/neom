@@ -43,5 +43,20 @@ here is : /root/test
 # tata
 tomatoc
 
-:
+`
+def sh(cmd, stdin="", sleep=False):
+    """ run a command, send stdin and capture stdout and exit status"""
+    if sleep:
+        time.sleep(0.5)
+    # process = Popen(cmd.split(), stdin=PIPE, stdout=PIPE)
+    process = Popen(cmd, shell=True, stdin=PIPE, stdout=PIPE)
+    process.stdin.write(bytes(stdin, "utf-8"))
+    stdout = process.communicate()[0].decode('utf-8').strip()
+    process.stdin.close()
+    returncode = process.returncode
+    return returncode, stdout
 
+``
+if test
+testesfsdfds
+sfddsf

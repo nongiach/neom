@@ -63,9 +63,24 @@ au BufRead,BufNewFile *.md set filetype=neom
 " endfunction
 " setlocal foldtext=MarkdownFoldText()
 
-set foldmethod=expr
+function! InitNeom()
+  set foldmethod=expr
+  setlocal foldexpr=NeomGetFold(v:lnum)
+
+  " highlight code snipet in note : starting with `
+  syntax include @PY syntax/python.vim
+  syntax region pySnip matchgroup=Snip start="`" end="\n\n" contains=@PY
+
+  " highlight console output : starting with ``
+  syn match console ".*" contained
+  syntax region consoleSnip matchgroup=Snip start="``" end="\n\n" contains=console
+  " syn region global_variables start="\(\*\*\*VARS\*\*\*\)\@<=" end="\(\*\*\*OTHERS
+        " \*\*\*\)\@=" contains=global_var_match
+  " hi link console ErrorMsg
+  highlight console guifg=#EEEEEE gui=bold guibg=#000000
+endfunction
 " let g:Func = function('NeomGetFold')
 " setlocal foldexpr=g:Func(v:lnum)
 "ant http link
-au BufRead,BufNewFile *.md setlocal foldexpr=NeomGetFold(v:lnum)
+au BufRead,BufNewFile *.md call InitNeom()
 
