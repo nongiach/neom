@@ -41,8 +41,10 @@ highlight NoteLink guifg=#88CC11 gui=italic
 highlight Folded guifg=#FF7B00 gui=italic
 
 " bullet points
-set conceallevel=1
-set concealcursor=ni
+" set conceallevel=1
+" set concealcursor=ni
+set conceallevel=2 concealcursor=nv
+
 " syntax match ConcealH1 /\# / conceal cchar=➤
 hi ConcealH1 ctermfg=109 guifg=#FF0000 ctermbg=NONE guibg=NONE
 

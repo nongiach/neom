@@ -69,11 +69,11 @@ function! InitNeom()
 
   " highlight code snipet in note : starting with `
   syntax include @PY syntax/python.vim
-  syntax region pySnip matchgroup=Snip start="`" end="\n\n" contains=@PY
+  syntax region pySnip matchgroup=Snip start="`" end="\n\n\n" contains=@PY
 
   " highlight console output : starting with ``
   syn match console ".*" contained
-  syntax region consoleSnip matchgroup=Snip start="``" end="\n\n" contains=console
+  syntax region consoleSnip matchgroup=Snip start="``" end="\n\n\n" contains=console
   " syn region global_variables start="\(\*\*\*VARS\*\*\*\)\@<=" end="\(\*\*\*OTHERS
         " \*\*\*\)\@=" contains=global_var_match
   " hi link console ErrorMsg
