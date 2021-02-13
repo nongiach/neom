@@ -38,6 +38,10 @@ class Main(object):
     def buffer(self):
         return self.vim.current.buffer
 
+    def buffer_iter(self):
+        for row in range(len(self.buffer)):
+            yield self.buffer[row]
+
     @property
     def current_line(self):
         row, col = self.vim.current.window.cursor
@@ -82,4 +86,21 @@ class Main(object):
 
         # self.echo(f"called insert note => {note}")
         self.current_line = self.current_line + note
+        return 0
+
+    @neovim.function('NeomToggleTodo', sync=True)
+    def do_neom_toggle_todo(self, args):
+        if self.current_line.startswith('TODO'):
+            self.current_line = self.current_line.replace('TODO', 'DONE')
+        elif self.current_line.startswith('DONE'):
+            self.current_line = self.current_line.replace('DONE', 'TODO')
+        nbr_TODO = 0
+        nbr_DONE = 0
+        for line in self.buffer_iter():
+            if line.startswith('TODO'):
+                nbr_TODO += 1
+            elif line.startswith('DONE'):
+                nbr_DONE += 1
+        TOTAL = nbr_DONE * 100 / (nbr_TODO + nbr_DONE)
+        self.buffer[-1] = f"# Project Advancement : {TOTAL:.1f}%"
         return 0

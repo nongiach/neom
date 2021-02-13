@@ -87,3 +87,4 @@ endfunction
 "ant http link
 au BufRead,BufNewFile *.md call InitNeom()
 
+nmap <leader>x :call NeomToggleTodo()<CR>
