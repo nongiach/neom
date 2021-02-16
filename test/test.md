@@ -86,5 +86,5 @@ CTRL+V u 2 0 2 2
 self.test  
 
   ~/github/notes/2fa_domain_admin.md:1
-  ~/github/notes/2fa_domain_admin.md:1
+
 

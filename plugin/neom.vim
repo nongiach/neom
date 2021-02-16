@@ -74,9 +74,11 @@ function! InitNeom()
 
   " highlight console output : starting with ``
   syn match console ".*" contained
-  syntax region consoleSnip matchgroup=Snip start="``" end="\n\n" contains=console
-  syntax region consoleSnip matchgroup=Snip start="``+" end="\n\n\n" contains=console
-
+  syntax region consoleSnip matchgroup=SnipConsole start=".*``" end="\n\n" contains=console
+  syntax region consoleSnip matchgroup=SnipConsole start=".*``+" end="\n\n\n" contains=console
+  highlight SnipConsole guifg=#FFC300 gui=bold
+  " syn match    customHeader2     "^#\{2\}.*"
+  " highlight customHeader2 guifg=#FF9500 gui=bold
   " syn region global_variables start="\(\*\*\*VARS\*\*\*\)\@<=" end="\(\*\*\*OTHERS
         " \*\*\*\)\@=" contains=global_var_match
   " hi link console ErrorMsg
