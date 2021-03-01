@@ -11,8 +11,8 @@ endif
 " refer to https://github.com/xolox/vim-notes/issues/2.
 syntax sync fromstart
 
-syntax match TODO "TODO"
-syntax match DONE "DONE"
+syntax match TODO "\cTODO"
+syntax match DONE "\cDONE"
 highlight TODO guifg=#CC8811 gui=bold
 highlight DONE guifg=#88CC11 gui=bold
 

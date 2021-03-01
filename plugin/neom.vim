@@ -69,13 +69,14 @@ function! InitNeom()
 
   " highlight code snipet in note : starting with `
   syntax include @PY syntax/python.vim
-  syntax region pySnip matchgroup=Snip start="`" end="\n\n" contains=@PY
-  syntax region pySnip matchgroup=Snip start="`+" end="\n\n\n" contains=@PY
+  syntax region pySnip matchgroup=Snip start="\(#.*\|\)`" end="\n\n" contains=@PY
+  syntax region pySnip matchgroup=Snip start="\(#.*\|\)`+" end="\n\n\n" contains=@PY
+  highlight Snip guifg=#FFC300 gui=bold
 
   " highlight console output : starting with ``
   syn match console ".*" contained
-  syntax region consoleSnip matchgroup=SnipConsole start=".*``" end="\n\n" contains=console
-  syntax region consoleSnip matchgroup=SnipConsole start=".*``+" end="\n\n\n" contains=console
+  syntax region consoleSnip matchgroup=SnipConsole start="\(.*\|\)``" end="\n\n" contains=console
+  syntax region consoleSnip matchgroup=SnipConsole start="\(.*\|\)``+" end="\n\n\n" contains=console
   highlight SnipConsole guifg=#FFC300 gui=bold
   " syn match    customHeader2     "^#\{2\}.*"
   " highlight customHeader2 guifg=#FF9500 gui=bold

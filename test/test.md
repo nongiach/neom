@@ -50,7 +50,7 @@ here is : /root/test
 ;;
 
 # tata
-tomatoc
+tomatoc C:\Windows\system32
 
 `
 def sh(cmd, stdin="", sleep=False):

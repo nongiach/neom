@@ -102,5 +102,7 @@ class Main(object):
             elif line.startswith('DONE'):
                 nbr_DONE += 1
         TOTAL = nbr_DONE * 100 / (nbr_TODO + nbr_DONE)
-        self.buffer[-1] = f"# Project Advancement : {TOTAL:.1f}%"
+        line = f"# Project Advancement : {TOTAL:.1f}%"
+        self.buffer[-1] = line
+        self.echo(line)
         return 0
