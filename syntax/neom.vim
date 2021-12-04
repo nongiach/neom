@@ -30,6 +30,9 @@ highlight customHeader4 guifg=#FFAA00 gui=bold
 highlight customHeader3 guifg=#FFC300 gui=bold
 highlight customHeader1 guifg=#FFEA00 gui=bold
 
+syn match    customHeader5     "^\*"
+highlight bulletPoint guifg=#FF7B00 gui=bold
+
 " color http link and filesystem path 
 syn match HttpLinkAndPath "\(https\?://\|[cC]:\\\|/\)[^ ]*"
 syn match NoteLink "[^ ]*.md"
