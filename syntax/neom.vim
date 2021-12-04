@@ -48,7 +48,7 @@ set conceallevel=2 concealcursor=nv
 " syntax match ConcealH1 /\# / conceal cchar=➤
 hi ConcealH1 ctermfg=109 guifg=#FF0000 ctermbg=NONE guibg=NONE
 
-syntax match Conceal /\*/ conceal cchar=⚫ 
+" syntax match Conceal /\*/ conceal cchar=⚫ 
 hi Conceal ctermfg=109 guifg=#EEEE00 ctermbg=NONE guibg=NONE
 
 syntax match Conceal /self/ conceal cchar=⋄
