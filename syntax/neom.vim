@@ -13,8 +13,11 @@ syntax sync fromstart
 
 syntax match TODO "\cTODO"
 syntax match DONE "\cDONE"
+syntax match BEST "BEST"
+
 highlight TODO guifg=#CC8811 gui=bold
 highlight DONE guifg=#88CC11 gui=bold
+highlight BEST guifg=#aaee33 gui=bold
 
 syn match    customHeader1     "^#\{1\}.*"
 " https://unicode-table.com/fr/27A4/
